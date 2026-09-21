@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Based Personalization — Study</title>
+<link rel="stylesheet" href="{% static 'recommender/style.css' %}">
+</head>
+
+<body>
+<div class="wrap">
+  <span class="kicker">Front-end + AI backend study</span>
+  <h1>AI-based personalization — user study</h1>
+
+  <!-- Screen 1: intro / demographics -->
+  <div class="field" id="nameField">
+    <label>Enter Your Name</label>
+    <input type="text" id="participantName" placeholder="Exmple: Priya" style="width:100%;padding:9px 10px;border-radius:6px;border:1px solid var(--border);font-size:14px;">
+  </div>
+  <div class="panel" id="introScreen">
+    <p class="dek">You will play 3 rounds. In each round, find the item from the given category as quickly as you can. The round order will be random. Your clicks and time will be recorded anonymously.</p>
+    <div class="field">
+      <label>Age range</label>
+      <select id="ageRange">
+        <option value="under18">Under 18</option>
+        <option value="18-24" selected>18–24</option>
+        <option value="25-34">25–34</option>
+        <option value="35+">35+</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Web/app usage familiarity</label>
+      <select id="webFamiliarity">
+        <option value="low">Low — occasional user</option>
+        <option value="medium" selected>Medium — daily user</option>
+        <option value="high">High — very comfortable with tech</option>
+      </select>
+    </div>
+    <button class="primary" id="startBtn">Start session</button>
+  </div>
+
+  <!-- Screen 2: trial -->
+  <div class="panel hidden" id="trialScreen">
+    <div class="progress" id="progressText">Round 1 of 3</div>
+    <div class="task-banner" id="taskBanner"></div>
+    <div class="timer" id="timerText">Time: 0.0s</div>
+
+    <div class="grid" id="grid"></div>
+
+    <div id="ratingPanel" class="hidden">
+      <div class="rating-row">
+        <label>Content kitna relevant laga?</label>
+        <div class="scale" id="relevanceScale"></div>
+        <div class="scale-labels"><span>Not relevant</span><span>Very relevant</span></div>
+      </div>
+      <div class="rating-row">
+        <label>Target dhoondna kitna easy tha?</label>
+        <div class="scale" id="easeScale"></div>
+        <div class="scale-labels"><span>Hard</span><span>Easy</span></div>
+      </div>
+      <button class="primary" id="nextRoundBtn" disabled>Next round</button>
+    </div>
+  </div>
+
+  <!-- Screen 3: done -->
+  <div class="panel hidden" id="doneScreen">
+    <h2 style="margin-top:0;">Session complete — dhanyavaad!</h2>
+    <p class="dek">Data record ho gaya hai. Researcher isko export kar sakta hai.</p>
+    <div class="done-actions">
+      <button class="ghost" id="exportClicksBtn">Export clicks CSV</button>
+      <button class="ghost" id="exportRatingsBtn">Export ratings CSV</button>
+      <button class="primary" id="restartBtn">Naya session shuru karo</button>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'recommender/script.js' %}"></script>
+</body>
+</html>

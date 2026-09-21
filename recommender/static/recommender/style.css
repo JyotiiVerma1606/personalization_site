@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #F6F4FC;
+  --panel: #FFFFFF;
+  --border: #E4E0F5;
+  --ink: #1B1A2E;
+  --muted: #6E6C87;
+  --accent: #6C5CE7;
+  --accent-soft: #ECE9FB;
+  --warm: #FF9F1C;
+  --warm-soft: #FFF1DC;
+  --good: #1FAE7A;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 620px; margin: 0 auto; padding: 40px 20px 64px; }
+
+h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 4px 0 12px;
+  color: var(--ink);
+}
+.kicker {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.dek { color: var(--muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 24px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(108, 92, 231, 0.06);
+}
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; }
+.field select, .field input[type="text"] {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  font-size: 15px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+}
+.field select:focus, .field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.welcome-back {
+  background: var(--accent-soft);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.welcome-back strong { color: var(--accent); }
+
+button.primary {
+  padding: 13px 22px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
+  cursor: pointer;
+  width: 100%;
+}
+button.primary:hover { background: #5B4BD6; }
+button.primary:disabled { opacity: 0.4; cursor: default; }
+
+button.ghost {
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.progress {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* Bada, bold task banner — sabse important element hai screen pe */
+.task-banner {
+  background: var(--warm-soft);
+  border: 2px solid var(--warm);
+  color: #7A4A00;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.task-banner .target-word {
+  color: var(--warm);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.timer {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  font-weight: 600;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.card {
+  background: var(--panel);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.card.clicked {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  opacity: 0.75;
+}
+.card.clicked .cat-tag {
+  background: var(--muted);
+}
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.card:active { transform: translateY(0); }
+.cat-tag {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  margin-bottom: 9px;
+  letter-spacing: 0.01em;
+}
+.card h3 { font-size: 14.5px; margin: 0 0 5px; line-height: 1.3; }
+.card p { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.4; }
+
+.rating-row { margin-bottom: 16px; }
+.rating-row label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 9px; }
+.scale { display: flex; gap: 7px; }
+.scale button {
+  flex: 1; padding: 10px 0; border-radius: 10px; border: 1.5px solid var(--border);
+  background: var(--bg); color: var(--ink); font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.scale button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: #fff; }
+.scale-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 5px; }
+
+.hidden { display: none; }
+.done-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+.done-actions button { flex: 1; min-width: 140px; }
+
+.done-check {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--good); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; margin-bottom: 14px;
+}
