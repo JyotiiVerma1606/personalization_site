@@ -83,6 +83,7 @@ pyparsing==3.3.1
 python-dateutil==2.9.0.post0
 python-json-logger==4.0.0
 pytz==2025.2
+pywinpty==3.0.2
 PyYAML==6.0.3
 pyzmq==27.1.0
 referencing==0.37.0
@@ -118,11 +119,3 @@ webencodings==0.5.1
 websocket-client==1.9.0
 whitenoise==6.12.0
 wordcloud==1.9.6
-
-Django==6.0.2
-scikit-learn==1.8.0
-numpy==2.3.5
-gunicorn==26.2.0
-whitenoise==6.12.0
-dj-database-url==3.1.2
-psycopg2-binary==2.9.13

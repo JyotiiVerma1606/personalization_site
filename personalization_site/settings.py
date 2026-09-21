@@ -49,6 +49,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',   # <-- ye add karo
     # ... baaki middleware jaisa hai waisa rahega
+    #  'django.middleware.security.SecurityMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    # baaki middleware...
 ]
 
 ROOT_URLCONF = 'personalization_site.urls'
